@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flt_share_button"
+    android:layout_width="52dp"
+    android:layout_height="52dp"
+    android:background="@color/grey_200"
+    android:orientation="vertical">
+
+    <ImageView
+        android:src="@drawable/ic_arrow_back"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_gravity="center"
+        app:tint="@color/red_500" />
+
+</FrameLayout>

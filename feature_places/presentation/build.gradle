@@ -1,0 +1,104 @@
+import com.app.projectgroup3.Libs
+
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+    sourceSets {
+        test {
+            java.srcDirs += "com/app/featureplaces/presentation/ui/src/testShared/java"
+        }
+
+        androidTest {
+            java.srcDirs += "com/app/featureplaces/presentation/ui/src/testShared/java"
+        }
+    }
+}
+
+dependencies {
+    implementation project(":feature_places:usecases")
+    implementation project(":feature_places:domain")
+    implementation project(":feature_places:data")
+    implementation project(":uicomponent")
+    implementation project(":testShared")
+
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.AndroidX.appCompat
+    implementation Libs.AndroidX.recyclerView
+    implementation Libs.AndroidX.material
+    implementation Libs.AndroidX.constraintLayout
+
+    implementation Libs.AndroidX.Lifecycle.viewmodelKtx
+    implementation Libs.AndroidX.Lifecycle.runtimeKtx
+
+    implementation Libs.AndroidX.Navigation.fragmentKtx
+    implementation Libs.AndroidX.Navigation.uiKtx
+
+    implementation Libs.AndroidX.Room.runtime
+    implementation Libs.AndroidX.Room.ktx
+    kapt Libs.AndroidX.Room.compiler
+
+    implementation Libs.playServicesLocation
+
+    implementation Libs.Glide.glide
+    kapt Libs.Glide.compiler
+
+    implementation Libs.OkHttp3.loginInterceptor
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.Retrofit.converterGson
+
+    implementation Libs.Arrow.core
+
+    implementation Libs.Hilt.android
+    kapt Libs.Hilt.compiler
+
+    implementation platform(Libs.GoogleService.Firebase.bom)
+    implementation Libs.GoogleService.Firebase.realTime
+
+    testImplementation Libs.JUnit.junit
+    testImplementation Libs.Mockito.kotlin
+    testImplementation Libs.Mockito.inline
+    testImplementation Libs.Kotlin.Coroutines.test
+    testImplementation Libs.turbine
+
+    androidTestImplementation Libs.AndroidX.Test.Ext.junit
+    androidTestImplementation Libs.AndroidX.Test.Espresso.contrib
+    androidTestImplementation Libs.AndroidX.Test.runner
+    androidTestImplementation Libs.AndroidX.Test.rules
+    androidTestImplementation Libs.Hilt.test
+    kaptAndroidTest Libs.Hilt.compiler
+
+}
