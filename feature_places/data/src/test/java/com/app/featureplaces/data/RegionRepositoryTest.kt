@@ -24,16 +24,15 @@ class RegionRepositoryTest {
     @Test
     fun `Return region from location data source when permission granted`(): Unit = runBlocking {
         val regionRepository = buildRegionRepository(
-            locationDataSource = mock { onBlocking { findLastRegion() } doReturn "ES" },
+            locationDataSource = mock { onBlocking { findLastRegion() } doReturn "PE" },
             permissionChecker = mock { on { check(COARSE_LOCATION) } doReturn true }
         )
 
         val region = regionRepository.findLastRegion()
 
-        assertEquals("ES", region)
+        assertEquals("PE", region)
     }
 }
-
 
 private fun buildRegionRepository(
     locationDataSource: LocationDataSource = mock(),

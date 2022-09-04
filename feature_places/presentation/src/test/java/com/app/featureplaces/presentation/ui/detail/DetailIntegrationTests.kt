@@ -3,7 +3,6 @@ package com.app.featureplaces.presentation.ui.detail
 import app.cash.turbine.test
 import com.app.domain.Comment
 import com.app.domain.Place
-import com.app.featureplaces.*
 import com.app.featureplaces.data.CommentsRepository
 import com.app.featureplaces.data.PlacesRepository
 import com.app.featureplaces.data.RegionRepository
@@ -64,40 +63,6 @@ class DetailIntegrationTests {
         }
     }
 
-    @Test
-    fun `UI is updated with the comments exist`() = runTest {
-        val comments = listOf(sampleComment.copy(idPlace = 2), sampleComment.copy(idPlace = 2))
-        val vm = buildViewModelWith(
-            id = 2,
-            localData = listOf(samplePlace.copy(1), samplePlace.copy(2)),
-            commentData = comments
-        )
-
-        vm.state.test {
-            assertEquals(UiState(), awaitItem())
-            assertEquals(2, awaitItem().place!!.id)
-            assertEquals(2, awaitItem().comments!!.first().idPlace)
-            cancel()
-        }
-    }
-
-    /*
-        @Test
-        fun `Save Comment in Remote data source`() = runTest {
-            val comments = listOf(sampleComment.copy(idPlace = 1))
-            val vm = buildViewModelWith(
-                id = 1,
-                commentData = comments
-            )
-            vm.saveCommentClicked("Hello")
-
-            vm.state.test {
-                assertEquals(UiState(), awaitItem())
-                assertEquals(UiState(comments = comments), awaitItem())
-                cancel()
-            }
-        }
-    */
     private fun buildViewModelWith(
         id: Int,
         localData: List<Place> = emptyList(),

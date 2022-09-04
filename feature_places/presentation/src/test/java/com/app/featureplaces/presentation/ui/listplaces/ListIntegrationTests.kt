@@ -41,7 +41,6 @@ class ListIntegrationTests {
             assertEquals(UiState(places = remoteData, loading = false), awaitItem())
             cancel()
         }
-
     }
 
 

@@ -20,8 +20,8 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     @PlaceId private val placeId: Int,
-    findPlaceUseCase: FindPlaceUseCase,
-    private val getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase,
+    private val findPlaceUseCase: FindPlaceUseCase,
+     val getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase,
     private val saveCommentOfPlaceUseCase: SaveCommentOfPlaceUseCase,
     private val switchPlaceFavoriteUseCase: SwitchPlaceFavoriteUseCase
 ) : ViewModel() {
@@ -45,14 +45,16 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    private fun getComments() {
+    fun getComments() {
         viewModelScope.launch {
-            getCommentsOfPlaceUseCase.invoke(placeId).fold(ifLeft = { errorModel ->
-                _state.update { UiState(error = errorModel) }
-            }) { flowComments ->
-                flowComments
-                    .catch { cause -> _state.update { it.copy(error = cause.toError()) } }
-                    .collect { comments -> _state.update { it.copy(comments = comments) } }
+            _state.value.place?.let { place ->
+                getCommentsOfPlaceUseCase(place.id).fold(ifLeft = { errorModel ->
+                    _state.update { UiState(error = errorModel) }
+                }) { flowComments ->
+                    flowComments
+                        .catch { cause -> _state.update { it.copy(error = cause.toError()) } }
+                        .collect { comments -> _state.update { it.copy(comments = comments) } }
+                }
             }
         }
     }

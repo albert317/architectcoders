@@ -34,6 +34,8 @@ class DetailViewModelTest {
     @Mock
     lateinit var findPlaceUseCase: FindPlaceUseCase
 
+    val comments = flowOf(listOf(sampleComment.copy(idPlace = 2)))
+
     @Mock
     lateinit var getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase
 
@@ -47,9 +49,6 @@ class DetailViewModelTest {
     private lateinit var vm: DetailViewModel
 
     private val place = samplePlace.copy(id = 2)
-
-    private val comment = sampleComment.copy(idPlace = 2)
-    private val comments = listOf(comment)
 
     @Before
     fun setup() {
@@ -85,6 +84,19 @@ class DetailViewModelTest {
         vm.saveCommentClicked("Hello")
         runCurrent()
         verify(saveCommentOfPlaceUseCase).invoke(argThat { commentText == "Hello" })
+    }
+
+
+    @Test
+    fun `Get comments action call the corresponding Place`() = runTest {
+        //Preguntar, un metodo del usecase es suspende y retornar un Eiter de right Flow
+        /* getCommentsOfPlaceUseCase = GetCommentsOfPlaceUseCase(mock {
+             onBlocking { getCommentsOfPlace(place.id) } doReturn comments.right()
+         })
+         vm.getComments()
+         runCurrent()
+         verify(getCommentsOfPlaceUseCase).invoke(place.id)*/
+
     }
 
 }
