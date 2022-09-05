@@ -19,7 +19,7 @@ class PlacesRepository @Inject constructor(
     suspend fun requestPopularMovies(): Error? {
         val region = regionRepository.findLastRegion()
         if (localDataSource.isEmpty()) {
-            val places = remoteDataSource.findPopularPlaces()
+            val places = remoteDataSource.findPopularPlaces(region)
             places.fold(ifLeft = { return it }) { localDataSource.save(it) }
         }
         return null

@@ -5,5 +5,5 @@ import com.app.domain.Error
 import com.app.domain.Place
 
 interface PlaceRemoteDataSource {
-    suspend fun findPopularPlaces(): Either<Error, List<Place>>
+    suspend fun findPopularPlaces(region: String): Either<Error, List<Place>>
 }

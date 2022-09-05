@@ -9,11 +9,11 @@ import com.app.featureplaces.presentation.data.tryCall
 import com.app.featureplaces.presentation.di.ApiKey
 import javax.inject.Inject
 
-class PlaceServerDataSource @Inject constructor(@ApiKey private val apiKey: String,private val remoteService: RemoteService) :
+class PlaceServerDataSource @Inject constructor(private val remoteService: RemoteService) :
     PlaceRemoteDataSource {
-    override suspend fun findPopularPlaces(): Either<Error, List<Place>> = tryCall {
+    override suspend fun findPopularPlaces(region:String): Either<Error, List<Place>> = tryCall {
         remoteService
-            .listPopularMovies()
+            .listPopularMovies(region)
             .results.toDomainModel()
     }
 }

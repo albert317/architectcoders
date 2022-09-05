@@ -4,5 +4,5 @@ import retrofit2.http.GET
 
 interface RemoteService {
     @GET("/list")
-    suspend fun listPopularMovies(): RemoteResult
+    suspend fun listPopularMovies(region:String): RemoteResult
 }
