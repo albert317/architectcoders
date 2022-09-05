@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "Machu Picchu",
+      "shortDescription": "Maravilla del mundo, esta antigua ciudad inca es uno de los tesoros más preciados de Perú.",
+      "largeDescription": "Machu Picchu, elegida maravilla del mundo y declarada patrimonio de la humanidad por la UNESCO, está ubicada a un par de horas de Cusco y es el principal reclamo del país y la debilidad de todo turista que llega a Perú. La visita guiada por las ruinas de esta antigua ciudad inca dura aproximadamente 3 horas, en las que se recorren terrazas, templos, casas... que todavía no se sabe como pudieron ser construidas con tal perfección con la poca tecnología de la época. Dicen que Machu Picchu es uno de los centros magnéticos de la Tierra, por lo que es el lugar perfecto para recargar energías. Llegar a Machu Picchu no es fácil ni barato, pero les aseguro que vale la pena. Primero hay que llegar desde Cusco a Ollantaytambo, donde tendrás que tomar un tren con destino a Aguas Calientes. Desde Aguas Calientes hasta Machu Picchu puedes tomar otro autobús o ir caminando. El bus a Ollantaytambo, el tren a Aguas Calientes y la visita guiada a Machu Picchu tienen un coste aproximado de 200 dólares para extranjeros (para peruanos es mucho más económico porque pueden viajar en trenes locales). Si se prefiere se puede llegar a Machu Picchu caminando, mediante un trekking de 6 días llamado Salkantay. El costo es de unos 600 dólares y hay que estar en muy buena forma.",
+      "images": [{
+        "id":1,
+        "idPlace":1,
+        "url":"https://www.peru.travel/Contenido/Atractivo/Imagen/pe/145/1.4/Principal/Machu%20Picchu.jpg",
+        "position":1
+
+      },{
+        "id":2,
+        "idPlace":1,
+        "url":"https://static.nationalgeographic.es/files/styles/image_3200/public/wide-machu-picchu-temple-of-the-sun_92491_600x450.jpg?w=1600",
+        "position":2
+      },{
+        "id":3,
+        "idPlace":1,
+        "url":"https://www.peruforless.com/blog/wp-content/uploads/2020/05/machu-picchu-ruins.jpg",
+        "position":3
+      } ],
+      "location": "Cusco",
+      "latitude":"-13.163334",
+      "longitude":"-72.545088"
+    },
+    {
+      "id": 2,
+      "name": "Líneas de Nazca",
+      "shortDescription": "Las Líneas y Geoglifos de Nasca son figuras zoomorfas, antropomorfas y líneas o campos barridos de gran magnitud.",
+      "largeDescription": "Las líneas de Nazca son un conjunto de líneas surcadas en la tierra del desierto de Nazca, de grandes dimensiones entre (50 y 300 metros) y que dibujan figuras muy curiosas. Se calcula que estas figuras fueron realizadas entre el año 500 a.C. y el año 500 d.C. con el fin de enviar mensajes a los dioses, que eran los únicos que podían verlas desde el cielo. Durante mucho tiempo fue un gran misterio averiguar como se trazaron esas líneas tan perfectas, sin tener una perspectiva, incluso se llegó a decir que eran obra de los extraterrestres. Pero los estudios arqueológicos encontraron una explicación mucho más convincente, parece ser que los nazcas trazaban las líneas con cordeles y estacas y luego iban sacando las piedras. Gracias a las condiciones climatológicas de la zona y a que la tierra allí no es nada productiva, los geoglifos de Nazca han podido mantenerse prácticamente intactos hasta la actualidad. La mejor forma de apreciar  lo geoglifos es hacer un tour por las líneas de Nazca, para ello hay que realizar un vuelo en avioneta que dura una media hora. En él podrán ver las figuras de: astronauta, ballena, alcatraz, cóndor, papagayo, mono, árbol, araña, colibrí, perro, trapecios y las manos. El precio del vuelo es de unos 80-100 dólares aproximadamente. La forma más cómoda de llegar a Nazca es tomar un bus desde Lima. El trayecto dura unas 8 horas y el precio varía en función de la compañía de transporte.",
+      "images": [{
+        "id":4,
+        "idPlace":2,
+        "url":"https://curiosfera-historia.com/wp-content/uploads/l%C3%ADneas-de-Nazca-1.jpg",
+        "position":1
+      },{
+        "id":5,
+        "idPlace":2,
+        "url":"https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/lineas-nazca.jpg",
+        "position":2
+      },{
+        "id":6,
+        "idPlace":2,
+        "url":"https://culturas-preincas.com/wp-content/uploads/2021/07/Li%CC%81neas-de-Nazca-1080x675.jpg",
+        "position":3
+      }],
+      "location": "Ica",
+      "latitude":"-14.7403894",
+      "longitude":"-75.1292922"
+    },
+    {
+      "id": 3,
+      "name": "Los Uros",
+      "shortDescription": "Los Uros constituyen un pueblo originario sobre las aguas del lago Titicaca",
+      "largeDescription": "Ubicadas en medio del Lago Titicaca, las islas de los uros son una explosión de exotismo y color. Estas islas artificiales fueron construidas por los uros a base de juncos. Las casas y las embarcaciones están hechas con el mismo material, la totora que al secarse y descomponerse emiten unos gases que favorecen la flotación. Cada isla tiene un sistema de anclaje para evitar que se desplace y cada 10 años son abandonadas y se construye una nueva. Los uros las construyeron para huir de los incas, pero actualmente se mantienen por el turismo. Para visitarlas hay que llegar hasta la ciudad de Puno (hay vuelos desde Lima y Cusco, y autobuses) y tomar un barco desde su puerto que les lleve a recorrerlas. Hay tours de dos horas y hasta de 8 horas. Además es posible alojarse en alguna de ellas.",
+      "images": [{
+        "id":7,
+        "idPlace":3,
+        "url":"https://www.ngenespanol.com/wp-content/uploads/2018/08/Los-Uros-el-pueblo-flotante-del-Lago-Titicaca-1280x720.jpg",
+        "position":1
+      },{
+        "id":8,
+        "idPlace":3,
+        "url":"https://www.anderratravel.com/tours-en-puno/imagenes/bote_puno.jpg",
+        "position":2
+      },{
+        "id":9,
+        "idPlace":3,
+        "url":"https://elcomercio.pe/resizer/mPu28wKJwUJHYlSHDwOc15jxkSY=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/VEPYJG6YNBBR3NFQBU2VYI2JQQ.jpg",
+        "position":3
+      }],
+      "location": "Puno",
+      "latitude":"-15.8135148",
+      "longitude":"-69.991854"
+    },
+    {
+      "id": 4,
+      "name": "Kuelap",
+      "shortDescription": "Llamada La Fortaleza y construido en la cima de una alta montaña es el conjunto arqueológico más importante de la selva montañosa peruana.",
+      "largeDescription": "Kuélap, o Cuélap, es un importante sitio arqueológico preinca ubicado en los Andes nororientales del Perú, en la Provincia de Luya. Fue construido por la cultura Chachapoyas. Forma un conjunto arquitectónico de piedra de grandes dimensiones caracterizado por su condición monumental, con una gran plataforma artificial, orientada de sur a norte, asentada sobre la cresta de roca calcárea en la cima del Cerro Barreta (a 3000 msnm). La plataforma se extiende a lo largo de casi 600 metros y tiene como perímetro una muralla que en algunos puntos alcanza 19 metros de altura. Se estima que su construcción debió iniciarse hacia el siglo XI, coincidiendo con el periodo de florecimiento de la cultura Chachapoyas, y su ocupación debió culminar hacia mitades del siglo XVI. Sus colosales murallas y su compleja arquitectura interior son evidencias de su función como un conjunto poblacional bien organizado, que incluye recintos de índole administrativa, religiosa, espacios ceremoniales y de residencia permanente. En abril de 2022 se registró varios derrumbes del muro en la zona arqueológica.1",
+      "images": [{
+        "id":10,
+        "idPlace":4,
+        "url":"https://www.peru.travel/Contenido/General/Imagen/pe/386/1.1/kuelap-fortaleza.jpg",
+        "position":1
+      },{
+        "id":11,
+        "idPlace":4,
+        "url":"https://cloudfront-us-east-1.images.arcpublishing.com/infobae/RXSMJ2WMAREIDKYXBO4U46TOYU.jpg",
+        "position":2
+      },{
+        "id":12,
+        "idPlace":4,
+        "url":"https://www.turiweb.pe/wp-content/uploads/2020/01/kuelap1-090120.jpg",
+        "position":3
+      }],
+      "location": "Chachapoyas",
+      "latitude":"-6.4205889",
+      "longitude":"-77.9252328"
+    }
+  ]
+}

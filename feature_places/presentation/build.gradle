@@ -39,11 +39,11 @@ android {
     }
     sourceSets {
         test {
-            java.srcDirs += "com/app/featureplaces/presentation/ui/src/testShared/java"
+            java.srcDirs += "$projectDir/src/testShared/java"
         }
 
         androidTest {
-            java.srcDirs += "com/app/featureplaces/presentation/ui/src/testShared/java"
+            java.srcDirs += "$projectDir/src/testShared/java"
         }
     }
 }

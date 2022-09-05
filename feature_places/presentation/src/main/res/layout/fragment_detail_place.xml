@@ -85,7 +85,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/title"
+                    android:id="@+id/detail_place_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_middle"
@@ -152,7 +152,7 @@
                     android:textStyle="bold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler"
+                    android:id="@+id/recyclerPlaces"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:itemsComments="@{comments}"

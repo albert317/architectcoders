@@ -22,7 +22,7 @@ class ListPlacesFragment : Fragment(R.layout.fragment_list_places) {
         listPlacesState = buildMainState()
 
         binding = FragmentListPlacesBinding.bind(view).apply {
-            recycler.adapter = adapter
+            recyclerPlaces.adapter = adapter
         }
         viewLifecycleOwner.launchAndCollect(viewModel.state) {
             binding.loading = it.loading

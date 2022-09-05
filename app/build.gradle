@@ -18,7 +18,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "com.app.projectgrupo3.di.HiltTestRunner"
+        testInstrumentationRunner "com.app.projectgroup3.di.HiltTestRunner"
     }
 
     buildTypes {
@@ -50,20 +50,35 @@ android {
 
 dependencies {
     implementation project(":feature_places:presentation")
-    implementation project(":feature_login:presentation")
+    implementation project(":feature_places:usecases")
+    implementation project(":feature_places:domain")
+    implementation project(":feature_places:data")
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.appCompat
-    androidTestImplementation Libs.Kotlin.Coroutines.test
-
     implementation Libs.AndroidX.Navigation.uiKtx
+
+
+    implementation Libs.AndroidX.Room.runtime
+    implementation Libs.AndroidX.Room.ktx
+    kapt Libs.AndroidX.Room.compiler
 
     implementation Libs.Hilt.android
     kapt Libs.Hilt.compiler
+
+    implementation Libs.Arrow.core
+
+    implementation Libs.OkHttp3.loginInterceptor
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.Retrofit.converterGson
+
 
     androidTestImplementation Libs.AndroidX.Test.Ext.junit
     androidTestImplementation Libs.AndroidX.Test.Espresso.contrib
     androidTestImplementation Libs.AndroidX.Test.runner
     androidTestImplementation Libs.AndroidX.Test.rules
     androidTestImplementation Libs.Hilt.test
+    androidTestImplementation Libs.Kotlin.Coroutines.test
     kaptAndroidTest Libs.Hilt.compiler
+    androidTestImplementation Libs.OkHttp3.mockWebServer
+
 }

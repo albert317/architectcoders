@@ -14,8 +14,6 @@ dependencies {
     implementation Libs.Kotlin.Coroutines.core
     implementation Libs.JavaX.inject
     implementation Libs.Arrow.core
-    implementation 'junit:junit:4.12'
-
 
     testImplementation Libs.JUnit.junit
     testImplementation Libs.Mockito.kotlin

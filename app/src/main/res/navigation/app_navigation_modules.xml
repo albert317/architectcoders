@@ -5,6 +5,5 @@
     android:id="@+id/app_navigation_modules"
     app:startDestination="@id/feature_places_nav_graph">
     <include app:graph="@navigation/feature_places_nav_graph" />
-    <include app:graph="@navigation/login_nav_graph" />
 
 </navigation>

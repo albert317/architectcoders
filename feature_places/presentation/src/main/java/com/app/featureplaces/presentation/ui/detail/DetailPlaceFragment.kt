@@ -22,7 +22,7 @@ class DetailPlaceFragment : Fragment(R.layout.fragment_detail_place) {
         binding = FragmentDetailPlaceBinding.bind(view)
         initToolbar()
 
-        binding.recycler.adapter = adapter
+        binding.recyclerPlaces.adapter = adapter
 
         binding.fab.setOnClickListener { viewModel.onFavoriteClicked() }
 

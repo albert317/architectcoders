@@ -6,13 +6,12 @@ import com.app.domain.Place
 import com.app.featureplaces.data.CommentsRepository
 import com.app.featureplaces.data.PlacesRepository
 import com.app.featureplaces.data.RegionRepository
+import com.app.featureplaces.presentation.*
 import com.app.featureplaces.presentation.testrules.CoroutinesTestRule
-import com.app.featureplaces.presentation.ui.*
 import com.app.featureplaces.usecases.FindPlaceUseCase
 import com.app.featureplaces.usecases.GetCommentsOfPlaceUseCase
 import com.app.featureplaces.usecases.SaveCommentOfPlaceUseCase
 import com.app.featureplaces.usecases.SwitchPlaceFavoriteUseCase
-import com.app.testshared.sampleComment
 import com.app.testshared.samplePlace
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf

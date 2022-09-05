@@ -14,16 +14,23 @@ import com.app.featureplaces.presentation.data.database.PlaceDataBase
 import com.app.featureplaces.presentation.data.database.PlaceRoomDataSource
 import com.app.featureplaces.presentation.data.firebase.CommentFirebaseServerDataSource
 import com.app.featureplaces.presentation.data.server.PlaceServerDataSource
+import com.app.featureplaces.presentation.data.server.RemoteService
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
     @Provides
     @Singleton
     @ApiKey
@@ -44,6 +51,30 @@ object AppModule {
     @Provides
     @Singleton
     fun provideImagePlaceDao(db: PlaceDataBase) = db.imagePlaceDao()
+
+    @Provides
+    @Singleton
+    @ApiUrl
+    fun provideApiUrl(): String = "https://32b6eea1-af9b-4ef7-8a90-f4fd21208f77.mock.pstmn.io"
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(): OkHttpClient = HttpLoggingInterceptor().run {
+        level = HttpLoggingInterceptor.Level.BODY
+        OkHttpClient.Builder().addInterceptor(this).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRemoteService(@ApiUrl apiUrl: String, okHttpClient: OkHttpClient): RemoteService {
+
+        return Retrofit.Builder()
+            .baseUrl(apiUrl)
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create()
+    }
 }
 
 @Module

@@ -5,10 +5,10 @@ import com.app.domain.Place
 import com.app.featureplaces.data.PlacesRepository
 import com.app.featureplaces.data.RegionRepository
 import com.app.featureplaces.presentation.testrules.CoroutinesTestRule
-import com.app.featureplaces.presentation.ui.FakeLocalDataSource
-import com.app.featureplaces.presentation.ui.FakeLocationDataSource
-import com.app.featureplaces.presentation.ui.FakePermissionChecker
-import com.app.featureplaces.presentation.ui.FakeRemoteDataSource
+import com.app.featureplaces.presentation.FakeLocalDataSource
+import com.app.featureplaces.presentation.FakeLocationDataSource
+import com.app.featureplaces.presentation.FakePermissionChecker
+import com.app.featureplaces.presentation.FakeRemoteDataSource
 import com.app.featureplaces.presentation.ui.listplaces.ListPlacesViewModel.UiState
 import com.app.featureplaces.usecases.GetPopularPlacesUseCase
 import com.app.featureplaces.usecases.RequestPopularPlacesUseCase
