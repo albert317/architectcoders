@@ -11,7 +11,7 @@ fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = true): 
     LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 
 
-inline fun <T> basicDiffUtil(
+inline fun <T : Any> basicDiffUtil(
     crossinline areItemsTheSame: (T, T) -> Boolean = { old, new -> old == new },
     crossinline areContentsTheSame: (T, T) -> Boolean = { old, new -> old == new }
 ) = object : DiffUtil.ItemCallback<T>() {

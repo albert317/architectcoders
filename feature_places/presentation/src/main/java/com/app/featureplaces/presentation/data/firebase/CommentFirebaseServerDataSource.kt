@@ -75,7 +75,7 @@ class CommentFirebaseServerDataSource @Inject constructor() :
     fun List<RemoteComment>.toDomain() = map { it.toDomain() }
 
     private fun Comment.fromDomainModel() = RemoteComment(
-        id,
+        "",
         idPlace,
         idUser,
         timeRegister,
