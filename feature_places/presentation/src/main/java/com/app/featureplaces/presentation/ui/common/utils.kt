@@ -8,7 +8,7 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.fragment.app.Fragment
-import com.app.presentation.databinding.DialogAddReviewBinding
+import com.app.featureplaces.presentation.databinding.DialogAddReviewBinding
 import java.text.SimpleDateFormat
 import java.util.*
 

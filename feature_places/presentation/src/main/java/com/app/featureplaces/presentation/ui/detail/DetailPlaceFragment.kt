@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.app.featureplaces.presentation.ui.common.showCustomDialog
-import com.app.presentation.R
-import com.app.presentation.common.launchAndCollect
-import com.app.presentation.databinding.FragmentDetailPlaceBinding
+import com.app.featureplaces.presentation.R
+import com.app.featureplaces.presentation.common.launchAndCollect
+import com.app.featureplaces.presentation.databinding.FragmentDetailPlaceBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

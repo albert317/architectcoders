@@ -1,4 +1,4 @@
-package com.app.presentation.common
+package com.app.featureplaces.presentation.common
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner

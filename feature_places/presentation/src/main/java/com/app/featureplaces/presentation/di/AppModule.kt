@@ -7,7 +7,7 @@ import com.app.featureplaces.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.featureplaces.data.datasource.LocationDataSource
 import com.app.featureplaces.data.datasource.PlaceLocalDataSource
 import com.app.featureplaces.data.datasource.PlaceRemoteDataSource
-import com.app.presentation.R
+import com.app.featureplaces.presentation.R
 import com.app.featureplaces.presentation.data.AndroidPermissionChecker
 import com.app.featureplaces.presentation.data.PlayServicesLocationDataSource
 import com.app.featureplaces.presentation.data.database.PlaceDataBase

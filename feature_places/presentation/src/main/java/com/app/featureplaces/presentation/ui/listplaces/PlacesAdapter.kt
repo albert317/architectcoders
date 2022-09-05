@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.domain.Place
-import com.app.presentation.R
-import com.app.presentation.databinding.ViewPlaceBinding
+import com.app.featureplaces.presentation.R
+import com.app.featureplaces.presentation.databinding.ViewPlaceBinding
 import com.app.featureplaces.presentation.ui.common.basicDiffUtil
 import com.app.featureplaces.presentation.ui.common.inflate
 

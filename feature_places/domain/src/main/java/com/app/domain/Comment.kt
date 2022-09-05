@@ -1,7 +1,7 @@
 package com.app.domain
 
 data class Comment(
-    val id: String,
+    val id: String? = null,
     var idPlace: Int,
     var idUser: Int,
     val timeRegister: String,

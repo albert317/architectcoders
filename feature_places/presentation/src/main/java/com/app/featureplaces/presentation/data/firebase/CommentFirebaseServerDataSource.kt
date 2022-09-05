@@ -2,11 +2,10 @@ package com.app.featureplaces.presentation.data.firebase
 
 import android.util.Log
 import arrow.core.Either
-import com.app.featureplaces.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.domain.Comment
 import com.app.domain.Error
+import com.app.featureplaces.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.featureplaces.presentation.data.tryCall
-import com.app.featureplaces.presentation.di.ApiKey
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -25,6 +24,7 @@ class CommentFirebaseServerDataSource @Inject constructor() :
             callbackFlow {
                 val databaseFirebase =
                     Firebase.database.reference.child("comments").child(idPlace.toString())
+                Log.d("COMMENTS","INIT")
                 val listener = object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         val listComments = ArrayList<RemoteComment>()
@@ -38,6 +38,7 @@ class CommentFirebaseServerDataSource @Inject constructor() :
                     }
 
                     override fun onCancelled(error: DatabaseError) {
+                        Log.e("COMMENTS", error.message)
                         trySend(ArrayList())
                     }
                 }
@@ -48,12 +49,15 @@ class CommentFirebaseServerDataSource @Inject constructor() :
 
     override fun saveCommentOfPlace(comment: Comment): Flow<Error?> =
         callbackFlow {
+            Log.e("SAVE COMMENTS", "INIT")
             val databaseFirebase = Firebase.database
             val commentReference =
                 databaseFirebase.getReference("comments").child(comment.idPlace.toString())
             commentReference.push().setValue(comment).addOnSuccessListener {
+                Log.e("SAVE COMMENTS", "OK")
                 trySend(null)
             }.addOnCanceledListener {
+                Log.e("SAVE COMMENTS", "CANCEL")
                 trySend(Error.Unknown("error"))
             }
         }

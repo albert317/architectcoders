@@ -8,7 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.app.domain.Error
 import com.app.domain.Place
-import com.app.presentation.R
+import com.app.featureplaces.presentation.R
 import com.app.featureplaces.presentation.ui.common.PermissionRequester
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

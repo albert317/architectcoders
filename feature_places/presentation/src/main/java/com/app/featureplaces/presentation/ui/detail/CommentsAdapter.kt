@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.domain.Comment
-import com.app.presentation.databinding.ViewCommentBinding
+import com.app.featureplaces.presentation.databinding.ViewCommentBinding
 import com.app.featureplaces.presentation.ui.common.basicDiffUtil
 import com.app.featureplaces.presentation.ui.common.inflate
-import com.app.presentation.R
+import com.app.featureplaces.presentation.R
 
 class CommentsAdapter(private val listener: (Comment) -> Unit) : ListAdapter<Comment, CommentsAdapter.ViewHolder>(
     basicDiffUtil { old, new -> old.id == new.id }) {

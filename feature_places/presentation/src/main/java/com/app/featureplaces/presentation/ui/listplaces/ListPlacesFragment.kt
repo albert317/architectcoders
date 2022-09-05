@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.app.presentation.R
-import com.app.presentation.common.launchAndCollect
-import com.app.presentation.databinding.FragmentListPlacesBinding
+import com.app.featureplaces.presentation.R
+import com.app.featureplaces.presentation.common.launchAndCollect
+import com.app.featureplaces.presentation.databinding.FragmentListPlacesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

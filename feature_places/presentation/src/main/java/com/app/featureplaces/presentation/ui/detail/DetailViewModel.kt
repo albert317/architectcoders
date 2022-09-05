@@ -1,5 +1,6 @@
 package com.app.featureplaces.presentation.ui.detail
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.domain.Comment
@@ -21,7 +22,7 @@ import javax.inject.Inject
 class DetailViewModel @Inject constructor(
     @PlaceId private val placeId: Int,
     private val findPlaceUseCase: FindPlaceUseCase,
-     val getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase,
+    val getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase,
     private val saveCommentOfPlaceUseCase: SaveCommentOfPlaceUseCase,
     private val switchPlaceFavoriteUseCase: SwitchPlaceFavoriteUseCase
 ) : ViewModel() {
@@ -34,7 +35,7 @@ class DetailViewModel @Inject constructor(
             findPlaceUseCase(placeId)
                 .catch { cause -> _state.update { it.copy(error = cause.toError()) } }
                 .collect { place ->
-                    getComments()
+                    getComments(place)
                     _state.update {
                         UiState(
                             place = place,
@@ -45,16 +46,14 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    fun getComments() {
+    private fun getComments(place: Place) {
         viewModelScope.launch {
-            _state.value.place?.let { place ->
-                getCommentsOfPlaceUseCase(place.id).fold(ifLeft = { errorModel ->
-                    _state.update { UiState(error = errorModel) }
-                }) { flowComments ->
-                    flowComments
-                        .catch { cause -> _state.update { it.copy(error = cause.toError()) } }
-                        .collect { comments -> _state.update { it.copy(comments = comments) } }
-                }
+            getCommentsOfPlaceUseCase(place.id).fold(ifLeft = { errorModel ->
+                _state.update { UiState(error = errorModel) }
+            }) { flowComments ->
+                flowComments
+                    .catch { cause -> _state.update { it.copy(error = cause.toError()) } }
+                    .collect { comments -> _state.update { it.copy(comments = comments) } }
             }
         }
     }
@@ -70,7 +69,6 @@ class DetailViewModel @Inject constructor(
 
     fun saveCommentClicked(textComment: String) {
         val comment = Comment(
-            id = "",
             idPlace = placeId,
             commentText = textComment,
             nameUser = "Albert Montes",
@@ -80,9 +78,7 @@ class DetailViewModel @Inject constructor(
         viewModelScope.launch {
             saveCommentOfPlaceUseCase(comment).catch { cause ->
                 _state.update { it.copy(error = cause.toError()) }
-            }.collect {
-
-            }
+            }.collect {}
         }
     }
 }

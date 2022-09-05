@@ -22,7 +22,7 @@
             <ImageView
                 android:layout_width="@dimen/spacing_xmlarge"
                 android:layout_height="@dimen/spacing_xmlarge"
-                android:src="@drawable/background_no_image"
+                android:src="@drawable/photo_user_comment"
                 />
 
             <View
@@ -79,6 +79,7 @@
                 android:gravity="top"
                 android:hint="Escribe un comentario..."
                 android:lines="4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:padding="@dimen/spacing_middle" />
 
         </LinearLayout>
